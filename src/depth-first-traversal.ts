@@ -6,7 +6,7 @@ export default function DepthFirstTraversal (root: Node | null) {
         const current = stack.pop();
         console.log(current?.value);
 
-        if (current?.left) stack.push(current.left);
         if (current?.right) stack.push(current.right);
+        if (current?.left) stack.push(current.left);
     }
 }
