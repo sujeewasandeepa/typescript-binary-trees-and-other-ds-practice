@@ -22,3 +22,29 @@ export function DepthFirstTraversalRecursive (root: Node | null) :any {
     const rightVals = DepthFirstTraversalRecursive(root.right);
     return [root.value, ... leftVals, ... rightVals];
 }
+
+// post-order traversal
+export function postOrderTraversal(root: Node | null): any {
+    const stack: Node[] = [];
+    const result: any[] = [];
+
+    let current = root;
+    let lastVisitedNode: (Node|null) = null;
+
+    while (current || stack.length > 0) {
+        if (current) {
+            stack.push(current);
+            current = current.left;
+        } else {
+            const peekNode = stack[stack.length - 1];
+            if (peekNode.right && peekNode.right !== lastVisitedNode) {
+                current = peekNode.right;
+            } else {
+                result.push(peekNode.value);
+                lastVisitedNode = stack.pop()!;
+            }
+        }
+    }
+
+    return result;
+}
