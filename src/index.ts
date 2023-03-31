@@ -1,6 +1,7 @@
 import { Node } from "./Node";
 
-import DepthFirstTraversal from "./depth-first-traversal";
+import {DepthFirstTraversal} from "./depth-first-traversal";
+import TwoDArray from "./TwoDArray";
 
 const a = new Node('a');
 const b = new Node('b');
@@ -15,4 +16,6 @@ b.left = d;
 b.right = e;
 c.right = f;
 
-DepthFirstTraversal(a);
+let result = DepthFirstTraversal(a);
+// console.log(result);
+TwoDArray();
