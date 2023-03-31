@@ -1,6 +1,6 @@
 import { Node } from "./Node";
 
-import {DepthFirstTraversal} from "./depth-first-traversal";
+import {DepthFirstTraversal, DepthFirstTraversalRecursive} from "./depth-first-traversal";
 import TwoDArray from "./TwoDArray";
 
 const a = new Node('a');
@@ -17,5 +17,7 @@ b.right = e;
 c.right = f;
 
 let result = DepthFirstTraversal(a);
+let resultRecursive = DepthFirstTraversalRecursive(a);
+// console.log(resultRecursive);
 // console.log(result);
 TwoDArray();
